@@ -11,6 +11,7 @@
             place-holder="Digite seu email"
             icon-name="fa6-solid:envelope"
             type="email"
+            v-model="email"
           />
         </div>
         <div class="formLogin__password">
@@ -18,6 +19,7 @@
             place-holder="Digite sua senha aqui"
             icon-name="fa6-solid:key"
             type="password"
+            v-model="password"
           />
         </div>
         <div class="formLogin__buttonSubmit">
@@ -34,6 +36,8 @@
 <script setup lang="ts">
 
 const isAuthenticated = ref<boolean>(false);
+const email = ref<string>("");
+const password = ref<string>("");
 
 
 const authenticateLogin = async (event: Event) => {
@@ -61,7 +65,6 @@ const goNextPage = () => {
   display: flex;
   flex-direction: column;
   gap: 35px;
-  max-width: 350px;
   background-color: #ffff;
   border-radius: 16px 16px 0 0;
 
