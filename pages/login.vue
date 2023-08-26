@@ -1,6 +1,15 @@
 <template>
   <div class="login">
-    <h1>Gestão Juridica</h1>
+    <header class="login__header">
+      <img
+        src="../public/imgs/loginImage.svg"
+        alt="Imagem de um forum com a marreta do juiz"
+      />
+      <img
+        src="https://www.vectorlogo.zone/logos/google/google-icon.svg"
+        alt="Logo do nosso app"
+      />
+    </header>
     <FormLogin />
   </div>
 </template>
