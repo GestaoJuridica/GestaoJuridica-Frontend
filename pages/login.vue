@@ -22,11 +22,9 @@
 .login {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  justify-content: space-between;
+  max-width: 350px;
 
   &__header {
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,6 +32,7 @@
 
   &__background {
     opacity: 0.1;
+    width: 100%;
   }
 
   &__logo {

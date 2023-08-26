@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app">
     <NuxtPage />
   </div>
 </template>
@@ -9,3 +9,9 @@ useHead({
   title: "Gestão Juridica",
 });
 </script>
+
+<style lang="scss" scoped>
+.app {
+  display: flex;
+}
+</style>
