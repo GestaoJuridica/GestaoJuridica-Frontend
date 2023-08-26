@@ -21,7 +21,9 @@
           />
         </div>
         <div class="formLogin__buttonSubmit">
-          <a>Esqueci a senha</a>
+          <h4 class="formLogin__forgetPassword">
+            <NuxtLink to="/forget-password">Esqueci a senha</NuxtLink>
+          </h4>
           <ButtonComponent text="ENTRAR" @click="authenticateLogin" />
         </div>
       </main>
@@ -32,6 +34,7 @@
 <script setup lang="ts">
 
 const isAuthenticated = ref<boolean>(false);
+
 
 const authenticateLogin = async (event: Event) => {
   event.preventDefault();
@@ -96,10 +99,12 @@ const goNextPage = () => {
     justify-content: space-between;
     align-items: center;
 
-    a {
-      color: #007ef2;
-      font-weight: bold;
-    }
+  }
+
+  &__forgetPassword > a {
+    color: #007ef2;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
 </style>
