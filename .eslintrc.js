@@ -18,6 +18,11 @@ module.exports = {
   },
   globals: {
     $nuxt: true,
+    definePageMeta: "readonly",
+    defineNuxtConfig: "readonly",
+    defineNuxtRouteMiddleware: "readonly",
+    navigateTo: "readonly",
+    useHead: "readonly",
   },
   parserOptions: {
     parser: "@babel/eslint-parser",
