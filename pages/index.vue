@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-useHead({
-  title: "Gestão Juridica",
+definePageMeta({
+  middleware: ["redirect"],
 });
 </script>
