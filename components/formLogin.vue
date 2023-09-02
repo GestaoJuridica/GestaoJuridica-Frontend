@@ -26,7 +26,7 @@
           <h4 class="formLogin__forgetPassword">
             <NuxtLink to="/forget-password">Esqueci a senha</NuxtLink>
           </h4>
-          <ButtonComponent text="ENTRAR" @click="authenticateLogin" />
+          <ButtonComponent type="submit" text="ENTRAR" @click="authenticateLogin" />
         </div>
       </main>
     </div>
@@ -42,10 +42,10 @@ const password = ref<string>("");
 
 const authenticateLogin = async (event: Event) => {
   event.preventDefault();
-
+  console.log('asd')
 
 	const response = {
-		status: "adasdasd"
+		status: "sucess"
 	}
 	
 
@@ -102,13 +102,17 @@ const goNextPage = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
   }
 
   &__forgetPassword > a {
     color: #007ef2;
     font-weight: bold;
     cursor: pointer;
+  }
+}
+@media (min-width: 768px) {
+  .formLogin {
+    width: 100%;
   }
 }
 </style>

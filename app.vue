@@ -14,4 +14,12 @@ useHead({
 .app {
   display: flex;
 }
+
+@media (min-width: 768px) {
+  .app {
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+}
 </style>
