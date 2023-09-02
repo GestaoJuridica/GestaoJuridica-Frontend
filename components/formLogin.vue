@@ -67,6 +67,7 @@ const goNextPage = () => {
   gap: 35px;
   background-color: #ffff;
   border-radius: 16px 16px 0 0;
+  height: 100%;
 
   &__header {
     display: flex;

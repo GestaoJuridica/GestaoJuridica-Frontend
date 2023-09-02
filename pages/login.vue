@@ -8,8 +8,7 @@
       />
       <img
         class="login__logo"
-        src="https://www.vectorlogo.zone/logos/google/google-icon.svg"
-        alt="Logo do nosso app"
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAADQ0lEQVR4nO2ay24TMRSGJ5UKtOWygyeAfcVLINEdEmqlFIlNIy4lTQIqIBBddsPtHbjtwy7bbLlsWVABLZSLAKk8wIem8QTHTBJ7bCeTxL/kRWacc8785/fxZSaKAgIChgHgFLAFvAdORpMG4Db/cCsaBQCLwLqj1pAIaDi0e97Xw5cYHZRcP/xBYJvRwRdgxiUBqylOXgGbFq0p2Wpa2opjUbHqO/tfgVkLuxuSrQ0LO4eAz95UQGf2d0RLUMsBARXJzkfgt/T7Wla73bJ/JTbqQgUuCEjJ/gpwz5kK6Mz+vjHh1FoFjghQs38AOAb8tFYB/2f/snSvbKsCWwLSsi/duytd382kAjqz/ykmRHFupQIHBKyp2ZfuHVVUULbN/qWUPlYqsCEgJQErKX3uKCqYdZJ9VyqwJKDcLftSn8PAd6nfWtbslzRl+CN26psAnex32XDpqQC42o9dqe+MmB2MVWBBgBzfhz7xHRGJSVDRcVDXyX4XFWjXAgsC6jrZl/rfNJoRgHPAL+BlL3YVFeyaqsCCgCS+umZ8ai3orwJTAFXTWuBqKawZ37pxLbBclNRyRsAc8E3yV/XhpGaigkESIPzdyFKrvKlgCATMiQfvVAEwBSw7Oo9r6rKsS4D3+IAL+MNFBwT4jY/OsesaVQcE+I0PWJIubFmezcXtnWRv0QEBfuMDTivjohBZQGyeEsw7IMBvfEBB2fwsWBg/I9nZ6RWsAQH+4wMeSjfeANMZjE8rx9P3XU2D3uMDTgB/pJuPMjh4LP1/DzjukAD/8QHXpQ77TnSYFgeRsnGtDYfpQsh7fLTG2jOl42vgbNpYFv0XgLfKf57oFKoMBPiPj9ZyVnWS7KCex+NGtBfKsjLB09hGv4fJQsDA4qPFXE0Zc/2wJ87otacoi/OAgcQXicLzQDl/U7EtGO9Z8FwSMKj4VMbnxYqsItqSuFbIwbtBL/F5x6C3w7kDgQCCAghDoI1QA6JJA6EGEGoAoQa0EWpANGkg1ABCDSDUgDYmvgY0NF5sxi9Ip6IxLYK6WI7GBbQyaopiNC6g9d6/aPBSszhWQyBg1IDbT1V8Nj+zBX4/VXGN5bxU7WGhmIeqvTmkZjRb/AX4zdI6eFOekAAAAABJRU5ErkJggg=="
       />
     </header>
     <FormLogin />
@@ -23,6 +22,8 @@
   display: flex;
   flex-direction: column;
   max-width: 350px;
+  height: 100vh;
+  justify-content: space-between;
 
   &__header {
     display: flex;
