@@ -7,25 +7,14 @@
       </header>
       <main class="formLogin__inputs">
         <div class="formLogin__email">
-          <InputComponent
-            place-holder="Digite seu email"
-            icon-name="fa6-solid:envelope"
-            type="email"
-            v-model="email"
-          />
+          <Icon name="fa6-solid:envelope" />
+          <input placeholder="Digite seu email" type="email" v-model="email" />
         </div>
         <div class="formLogin__password">
-          <InputComponent
-            place-holder="Digite sua senha aqui"
-            icon-name="fa6-solid:key"
-            type="password"
-            v-model="password"
-          />
+          <Icon name="fa6-solid:key" />
+          <input placeholder="Digite sua senha aqui" type="password" v-model="password" />
         </div>
         <div class="formLogin__buttonSubmit">
-          <h4 class="formLogin__forgetPassword">
-            <NuxtLink to="/forget-password">Esqueci a senha</NuxtLink>
-          </h4>
           <ButtonComponent type="submit" text="ENTRAR" @click="authenticateLogin" />
         </div>
       </main>
@@ -34,24 +23,24 @@
 </template>
 
 <script setup lang="ts">
-
-const isAuthenticated = ref<boolean>(false);
+import Axios from "axios";
+let isAuthenticated = ref<boolean>(false);
 const email = ref<string>("");
 const password = ref<string>("");
 
 
 const authenticateLogin = async (event: Event) => {
   event.preventDefault();
-  console.log('asd')
 
-	const response = {
-		status: "sucess"
-	}
+  try {
+    const data = await Axios.post('http://localhost:3333/user/login', {email: email.value, password: password.value});
+    isAuthenticated.value = true;
+  	isAuthenticated.value ? goNextPage(): null;
+    return data;
+  } catch (error: any) {
+    throw new Error(error);
+  }
 	
-
-	response.status === "sucess" ? isAuthenticated.value = true : false;
-	
-	isAuthenticated.value ? goNextPage(): null;
 };
 
 const goNextPage = () => {
@@ -100,8 +89,8 @@ const goNextPage = () => {
 
   &__buttonSubmit {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center;
   }
 
   &__forgetPassword > a {
@@ -114,5 +103,49 @@ const goNextPage = () => {
   .formLogin {
     width: 100%;
   }
+}
+
+.formLogin__password {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #007ef2;
+  min-height: 60px;
+  border-radius: 10px;
+  gap: 20px;
+
+  input {
+    background-color: transparent;
+  }
+}
+
+.icon {
+  margin-left: 18px;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+.formLogin__email {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #007ef2;
+  min-height: 60px;
+  border-radius: 10px;
+  gap: 20px;
+
+  input {
+    background-color: transparent;
+  }
+}
+
+.icon {
+  margin-left: 18px;
+}
+
+::placeholder {
+  color: #fff;
 }
 </style>
