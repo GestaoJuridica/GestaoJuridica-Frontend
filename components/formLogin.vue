@@ -33,10 +33,11 @@ const authenticateLogin = async (event: Event) => {
   event.preventDefault();
 
   try {
-    const data = await Axios.post('http://localhost:3333/user/login', {email: email.value, password: password.value});
+    const response = await Axios.post('http://localhost:3333/user/login', {email: email.value, password: password.value});
+    localStorage.setItem('token', response.data.token);
     isAuthenticated.value = true;
   	isAuthenticated.value ? goNextPage(): null;
-    return data;
+    return response;
   } catch (error: any) {
     throw new Error(error);
   }
