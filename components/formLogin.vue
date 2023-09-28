@@ -8,41 +8,52 @@
       <main class="formLogin__inputs">
         <div class="formLogin__email">
           <Icon name="fa6-solid:envelope" />
-          <input placeholder="Digite seu email" type="email" v-model="email" />
+          <input @input="clearError" placeholder="Digite seu email" type="email" v-model="email" />
         </div>
         <div class="formLogin__password">
           <Icon name="fa6-solid:key" />
-          <input placeholder="Digite sua senha aqui" type="password" v-model="password" />
+          <input @input="clearError" placeholder="Digite sua senha aqui" type="password" v-model="password" />
         </div>
         <div class="formLogin__buttonSubmit">
           <ButtonComponent type="submit" text="ENTRAR" @click="authenticateLogin" />
         </div>
+        <h2 v-if="formInvalid" style="color: red; text-align: center;">Usuario ou senha invalidos</h2>
       </main>
     </div>
   </form>
 </template>
 
 <script setup lang="ts">
-import Axios from "axios";
+import api from '../api/axios'
 let isAuthenticated = ref<boolean>(false);
 const email = ref<string>("");
 const password = ref<string>("");
+let formInvalid = ref<boolean>(false);
+
+onMounted(() => {
+  localStorage.clear();
+})
 
 
 const authenticateLogin = async (event: Event) => {
   event.preventDefault();
 
   try {
-    const response = await Axios.post('http://localhost:3333/user/login', {email: email.value, password: password.value});
+    const response = await api.post('user/login', {email: email.value, password: password.value});
     localStorage.setItem('token', response.data.token);
     isAuthenticated.value = true;
   	isAuthenticated.value ? goNextPage(): null;
     return response;
   } catch (error: any) {
+    formInvalid.value = true;
     throw new Error(error);
   }
 	
 };
+
+const clearError = (): void => {
+  formInvalid.value = false;
+}
 
 const goNextPage = () => {
   const router = useRouter();
