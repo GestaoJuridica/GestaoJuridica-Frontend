@@ -4,14 +4,39 @@
       <h1 v-if="!toggleSideBar">Gestão Juridica</h1>
       <ButtonComponent
         v-if="!toggleSideBar"
-        icon="ABRIR"
         @click="toggleSideBar = !toggleSideBar"
-      />
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="white"
+            d="M17.77 3.77L16 2L6 12l10 10l1.77-1.77L9.54 12z"
+          />
+        </svg>
+      </ButtonComponent>
+
       <ButtonComponent
         v-if="toggleSideBar"
-        text="ABRIR"
         @click="toggleSideBar = !toggleSideBar"
-      />
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <g transform="translate(24 0) scale(-1 1)">
+            <path
+              fill="white"
+              d="M17.77 3.77L16 2L6 12l10 10l1.77-1.77L9.54 12z"
+            />
+          </g>
+        </svg>
+      </ButtonComponent>
     </header>
     <main class="sidebar__content">
       <ul class="sidebar__ul">

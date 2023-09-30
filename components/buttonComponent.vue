@@ -5,8 +5,9 @@
         {{ props.text }}
       </span>
     </button>
+
     <button v-else>
-      <img :src="props.icon" />
+      <slot />
     </button>
   </div>
 </template>
@@ -14,7 +15,6 @@
 <script setup lang="ts">
 const props = defineProps({
   text: { type: String },
-  icon: { type: String },
 });
 </script>
 
@@ -22,6 +22,7 @@ const props = defineProps({
 button {
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #007ef2;
   color: #fff;
   border-radius: 10px;
