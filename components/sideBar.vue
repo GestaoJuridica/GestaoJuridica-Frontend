@@ -58,6 +58,9 @@ let toggleSideBar = ref<boolean>(false);
 
 <style lang="scss" scoped>
 .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 280px;
   background-color: #fff;
   transition: 0.5s;
