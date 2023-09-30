@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <SideBar />
+    <NuxtLayout></NuxtLayout>
     <div class="home__content">
       <h1>Home content</h1>
     </div>
@@ -12,7 +12,11 @@
 <style lang="scss" scoped>
 .home {
   display: flex;
+  height: 100%;
   width: 100%;
-  height: 100vh;
+
+  .home__content {
+    width: 100%;
+  }
 }
 </style>
