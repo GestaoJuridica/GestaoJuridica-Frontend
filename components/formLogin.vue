@@ -127,7 +127,7 @@ const goNextPage = () => {
   gap: 20px;
 
   input {
-    background-color: transparent;
+    background-color: #0f58f500;
   }
 }
 
@@ -159,5 +159,13 @@ const goNextPage = () => {
 
 ::placeholder {
   color: #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #ffffff;
 }
 </style>
